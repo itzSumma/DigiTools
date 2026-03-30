@@ -1,0 +1,125 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "AI Writing Pro",
+      "description": "Draft blogs, captions, and client copy with ready-made prompts.",
+      "price": 19,
+      "period": "monthly",
+      "tag": "Popular",
+      "tagType": "popular",
+      "rating": "4.9",
+      "iconKey": "writingImage",
+      "accent": "violet",
+      "features": ["50+ writing workflows", "Instant tone switch", "Team content planner"]
+    },
+    {
+      "id": 2,
+      "name": "Design Templates Pack",
+      "description": "Premium social graphics, carousel layouts, and ad creative kits.",
+      "price": 29,
+      "period": "one-time",
+      "tag": "Best Seller",
+      "tagType": "best",
+      "rating": "4.8",
+      "iconKey": "designToolImage",
+      "accent": "orange",
+      "features": ["120+ editable templates", "Canva-friendly files", "Brand color presets"]
+    },
+    {
+      "id": 3,
+      "name": "Resume Stack Kit",
+      "description": "Clean resume templates with ATS-safe formatting and matching covers.",
+      "price": 15,
+      "period": "one-time",
+      "tag": "New",
+      "tagType": "new",
+      "rating": "4.7",
+      "iconKey": "portfolioImage",
+      "accent": "teal",
+      "features": ["ATS-ready sections", "Cover letter layout", "Portfolio page bonus"]
+    },
+    {
+      "id": 4,
+      "name": "Automation Hub",
+      "description": "Mini systems to automate repetitive operations in your workflow.",
+      "price": 39,
+      "period": "yearly",
+      "tag": "Popular",
+      "tagType": "popular",
+      "rating": "4.9",
+      "iconKey": "operationImage",
+      "accent": "green",
+      "features": ["Zapier-ready map", "Notion pipeline plan", "Client delivery checklist"]
+    },
+    {
+      "id": 5,
+      "name": "Reels Builder Pro",
+      "description": "Fast-moving script and storyboard toolkit for short-form content.",
+      "price": 24,
+      "period": "monthly",
+      "tag": "Trending",
+      "tagType": "best",
+      "rating": "4.8",
+      "iconKey": "socialMediaImage",
+      "accent": "pink",
+      "features": ["30 viral hooks", "Storyboard prompts", "Caption templates included"]
+    },
+    {
+      "id": 6,
+      "name": "Social Media Planner",
+      "description": "Weekly post planning board with content buckets and KPI tracking.",
+      "price": 17,
+      "period": "monthly",
+      "tag": "Starter",
+      "tagType": "new",
+      "rating": "4.6",
+      "iconKey": "shoppingCartImage",
+      "accent": "blue",
+      "features": ["Monthly calendar", "Content pillar map", "Campaign notes panel"]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Browse Resources",
+      "text": "Pick the digital tools that match your workflow and budget.",
+      "iconKey": "userImage"
+    },
+    {
+      "title": "Choose Products",
+      "text": "Compare features, pricing, and tags before adding items to cart.",
+      "iconKey": "packageImage"
+    },
+    {
+      "title": "Start Growing",
+      "text": "Checkout and start using the tools right away in your projects.",
+      "iconKey": "rocketImage"
+    }
+  ],
+  "pricingPlans": [
+    {
+      "name": "Starter",
+      "price": "$0",
+      "subtitle": "Best for trying the platform",
+      "features": ["3 free resources", "Basic support", "Starter dashboard"],
+      "cta": "Get Started",
+      "featured": false
+    },
+    {
+      "name": "Pro",
+      "price": "$29",
+      "subtitle": "Perfect for freelancers and creators",
+      "features": ["Unlimited downloads", "Priority updates", "Premium templates"],
+      "cta": "Choose Pro",
+      "featured": true
+    },
+    {
+      "name": "Enterprise",
+      "price": "$99",
+      "subtitle": "For teams handling multiple brands",
+      "features": ["Team access", "Dedicated onboarding", "Advanced workflow kits"],
+      "cta": "Contact Sales",
+      "featured": false
+    }
+  ]
+}

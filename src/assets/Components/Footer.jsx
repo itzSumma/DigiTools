@@ -1,4 +1,4 @@
-import { FiFacebook, FiGlobe, FiTwitter } from 'react-icons/fi'
+﻿import { FiFacebook, FiGlobe, FiTwitter } from 'react-icons/fi'
 
 const socialLinkClass = 'flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#11192f] transition duration-300 hover:-translate-y-1 hover:bg-[#7a38f5] hover:text-white hover:shadow-[0_12px_24px_rgba(122,56,245,0.28)] active:-translate-y-0.5 active:bg-[#7a38f5] active:text-white'
 const footerLinkClass = 'block leading-7 transition duration-200 hover:text-white active:translate-x-1 active:text-white'
@@ -64,7 +64,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-10 flex flex-col gap-4 border-t border-white/10 pt-6 text-sm text-white/45 sm:mt-12 sm:pt-8 md:flex-row md:items-center md:justify-between">
-          <p className="leading-7">� 2026 DigiTools. All rights reserved.</p>
+          <p className="leading-7">© 2026 DigiTools. All rights reserved.</p>
           <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-6">
             <a className={bottomLinkClass} href="#footer">Privacy Policy</a>
             <a className={bottomLinkClass} href="#footer">Terms of Service</a>

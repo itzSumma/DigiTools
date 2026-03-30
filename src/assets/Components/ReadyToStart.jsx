@@ -1,6 +1,6 @@
 const ReadyToStart = () => {
   return (
-    <section className="mt-8 bg-gradient-to-r from-[#5b2ef2] via-[#7f2fff] to-[#be16ff] py-20 text-center text-white md:py-24">
+    <section className="mt-8 bg-linear-to-r from-[#5b2ef2] via-[#7f2fff] to-[#be16ff] py-20 text-center text-white md:py-24">
       <div className="mx-auto w-[min(1120px,calc(100%-1.5rem))]">
         <h2 className="text-[2.5rem] font-extrabold tracking-[-0.05em] md:text-[3.4rem]">
           Ready To Transform Your Workflow?
@@ -26,7 +26,7 @@ const ReadyToStart = () => {
         </div>
 
         <p className="mt-6 text-sm text-white/70">
-          14-day free trial · No credit card required · Cancel anytime
+          14-day free trial â€¢ No credit card required â€¢ Cancel anytime
         </p>
       </div>
     </section>

@@ -1,11 +1,3 @@
-import { FiBox, FiRocket, FiUser } from 'react-icons/fi'
-
-const iconMap = {
-  userImage: FiUser,
-  packageImage: FiBox,
-  rocketImage: FiRocket,
-}
-
 const Steps = ({ steps }) => {
   return (
     <section className="bg-[#f7f8fc] py-20 md:py-24" id="steps">
@@ -21,8 +13,6 @@ const Steps = ({ steps }) => {
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {steps.map((step, index) => {
-            const StepIcon = iconMap[step.icon] || FiBox
-
             return (
               <article
                 key={step.title}
@@ -32,7 +22,11 @@ const Steps = ({ steps }) => {
                   0{index + 1}
                 </span>
                 <div className="mx-auto flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-full bg-[#f2ebff] text-[#7a38f5]">
-                  <StepIcon className="text-[2rem]" />
+                  <img
+                    src={step.iconSrc}
+                    alt={step.title}
+                    className="h-8 w-8 object-contain"
+                  />
                 </div>
                 <h3 className="mt-7 text-[1.85rem] font-bold tracking-[-0.04em] text-[#1d2438]">
                   {step.title}

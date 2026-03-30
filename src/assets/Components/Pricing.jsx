@@ -1,46 +1,49 @@
-import { FiCheckCircle } from 'react-icons/fi'
+import { FiCheck } from 'react-icons/fi'
 
 const Pricing = ({ pricingPlans }) => {
   return (
-    <section className="mx-auto w-[min(1120px,calc(100%-1.5rem))] py-14 md:py-16" id="pricing">
-      <div className="mx-auto mb-9 max-w-2xl text-center">
-        <h2 className="text-[1.9rem] font-bold tracking-tight md:text-[2.2rem]">Simple, Transparent Pricing</h2>
-      </div>
+    <section className="py-20 md:py-24" id="pricing">
+      <div className="mx-auto w-[min(1120px,calc(100%-1.5rem))]">
+        <div className="mx-auto max-w-[44rem] text-center">
+          <h2 className="text-[2.6rem] font-extrabold tracking-[-0.05em] text-[#1d2438] md:text-[4rem]">
+            Simple, Transparent Pricing
+          </h2>
+          <p className="mt-4 text-base text-[#8b95a9]">
+            Choose the plan that fits your needs. Upgrade or downgrade anytime.
+          </p>
+        </div>
 
-      <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-        {pricingPlans.map((plan) => (
-          <article
-            key={plan.name}
-            className={`card border shadow-sm ${
-              plan.featured ? 'border-primary bg-primary text-primary-content' : 'border-[#ece7fb] bg-white'
-            }`}
-          >
-            <div className="card-body p-6">
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <h3 className="text-lg font-bold">{plan.name}</h3>
-                  <p
-                    className={`mt-1 text-[12px] leading-6 ${
-                      plan.featured ? 'text-primary-content/80' : 'text-base-content/70'
-                    }`}
-                  >
-                    {plan.subtitle}
-                  </p>
-                </div>
-                {plan.featured ? <span className="badge badge-warning h-6 rounded-full text-[10px]">Most Popular</span> : null}
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {pricingPlans.map((plan) => (
+            <article
+              key={plan.name}
+              className={`relative rounded-[1.25rem] border px-6 py-6 shadow-[0_10px_24px_rgba(28,30,53,0.04)] ${
+                plan.featured
+                  ? 'border-transparent bg-gradient-to-br from-[#6f3df4] via-[#7c23ff] to-[#bb16ff] text-white'
+                  : 'border-[#ece8f7] bg-[#f9faff] text-[#1d2438]'
+              }`}
+            >
+              {plan.featured ? (
+                <span className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#ffe59a] px-4 py-1 text-xs font-semibold text-[#a26400]">
+                  Most Popular
+                </span>
+              ) : null}
+
+              <h3 className="text-[1.85rem] font-bold tracking-[-0.04em]">{plan.name}</h3>
+              <p className={`mt-2 text-sm ${plan.featured ? 'text-white/80' : 'text-[#8b95a9]'}`}>{plan.subtitle}</p>
+
+              <div className="mt-6 flex items-end gap-1">
+                <strong className="text-[2.4rem] font-extrabold tracking-[-0.05em]">{plan.price}</strong>
+                <span className={`pb-1 text-sm ${plan.featured ? 'text-white/80' : 'text-[#8b95a9]'}`}>{plan.period}</span>
               </div>
 
-              <strong className="mt-5 inline-block text-4xl font-black tracking-tight">{plan.price}</strong>
-
-              <ul className="mt-5 space-y-2.5">
+              <ul className="mt-6 space-y-3">
                 {plan.features.map((feature) => (
                   <li
                     key={feature}
-                    className={`flex items-center gap-2 text-[12px] ${
-                      plan.featured ? 'text-primary-content/80' : 'text-base-content/70'
-                    }`}
+                    className={`flex items-center gap-2 text-sm ${plan.featured ? 'text-white/90' : 'text-[#6f7a92]'}`}
                   >
-                    <FiCheckCircle className={plan.featured ? 'text-primary-content' : 'text-primary'} />
+                    <FiCheck className="text-[#52d67f]" />
                     <span>{feature}</span>
                   </li>
                 ))}
@@ -48,13 +51,17 @@ const Pricing = ({ pricingPlans }) => {
 
               <button
                 type="button"
-                className={`btn mt-5 min-h-9 w-full rounded-full text-[11px] uppercase tracking-[0.18em] ${plan.featured ? 'btn-neutral' : 'btn-primary'}`}
+                className={`mt-8 inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-semibold ${
+                  plan.featured
+                    ? 'bg-white text-[#6f3df4]'
+                    : 'bg-gradient-to-r from-[#6f3df4] to-[#9c16f7] text-white'
+                }`}
               >
                 {plan.cta}
               </button>
-            </div>
-          </article>
-        ))}
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   )

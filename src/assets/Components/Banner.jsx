@@ -1,49 +1,46 @@
-import { FiStar, FiZap } from 'react-icons/fi'
+import { FiPlay } from 'react-icons/fi'
 
 const Banner = ({ heroAssets }) => {
   return (
     <section
-      className="mx-auto grid w-[min(1120px,calc(100%-1.5rem))] gap-8 py-10 lg:grid-cols-[1.02fr_.82fr] lg:items-center lg:py-14"
+      className="mx-auto grid w-[min(1120px,calc(100%-1.5rem))] gap-10 py-14 md:py-20 lg:grid-cols-[1fr_0.95fr] lg:items-center lg:gap-16 lg:py-24"
       id="hero"
     >
-      <div>
-        <span className="badge badge-primary badge-outline rounded-full border-[#d9ccff] bg-[#f7f3ff] px-3 py-2 text-[10px] uppercase tracking-[0.18em]">
-          AI-Powered Resource Hub
+      <div className="max-w-[34rem]">
+        <span className="inline-flex rounded-full bg-[#ede8ff] px-4 py-2 text-xs font-semibold text-[#7a38f5] shadow-sm">
+          New: AI-Powered Tools Available
         </span>
-        <h1 className="mt-4 max-w-md text-[2.2rem] font-black leading-[0.95] tracking-tight md:text-[3.35rem]">
+        <h1 className="mt-6 text-[2.6rem] font-extrabold leading-[0.95] tracking-[-0.05em] text-[#20263a] md:text-[4.5rem]">
           Supercharge Your Digital Workflow
         </h1>
-        <p className="mt-4 max-w-md text-sm leading-6 text-base-content/65">
-          Discover polished toolkits for content, design, automation, and growth.
-          Built to help you ship faster and look more professional.
+        <p className="mt-5 max-w-[31rem] text-base leading-8 text-[#75809a]">
+          Access premium AI tools, design assets, templates, and productivity
+          software all in one place. Start creating faster today.
         </p>
-        <div className="mt-6 flex flex-wrap gap-3">
-          <a className="btn btn-primary min-h-9 rounded-full px-5 text-[11px] uppercase tracking-[0.18em]" href="#products">
-            Explore Tools
+        <div className="mt-8 flex flex-wrap items-center gap-4">
+          <a
+            href="#products"
+            className="inline-flex items-center rounded-full bg-gradient-to-r from-[#6f3df4] to-[#9c16f7] px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_rgba(122,56,245,0.22)]"
+          >
+            Explore Products
           </a>
-          <button type="button" className="btn btn-outline min-h-9 rounded-full border-[#e5defd] px-4 text-[11px] uppercase tracking-[0.18em]">
-            <img src={heroAssets.playImage} alt="" aria-hidden="true" className="h-3.5 w-3.5 object-contain" />
+          <button
+            type="button"
+            className="inline-flex items-center gap-2 rounded-full border border-[#a35dff] px-6 py-3 text-sm font-semibold text-[#7a38f5]"
+          >
+            <FiPlay className="text-sm" />
             Watch Demo
           </button>
         </div>
       </div>
 
       <div className="flex justify-center lg:justify-end">
-        <div className="relative w-full max-w-[18rem] rounded-[0.3rem] bg-[#f8f6ff] p-3 shadow-[0_10px_35px_rgba(140,93,255,0.10)]">
-          <div className="absolute inset-3 rounded-[0.2rem] bg-gradient-to-br from-primary/10 via-white to-white" />
+        <div className="w-full max-w-[18.75rem] overflow-hidden rounded-[0.4rem] bg-[#f5f5f9] shadow-[0_20px_45px_rgba(35,39,58,0.08)] md:max-w-[22rem] lg:max-w-[25rem]">
           <img
             src={heroAssets.bannerImage}
-            alt="Digital workflow banner"
-            className="relative z-10 aspect-[4/5] w-full rounded-[0.15rem] object-cover"
+            alt="Digital workflow tools"
+            className="aspect-[0.82] w-full object-cover"
           />
-          <div className="badge badge-primary absolute top-6 right-0 z-20 -translate-y-1/2 rounded-full px-3 py-2 text-[10px] shadow-sm">
-            <FiZap />
-            Fast setup
-          </div>
-          <div className="badge badge-outline absolute bottom-6 left-0 z-20 translate-y-1/2 rounded-full bg-base-100 px-3 py-2 text-[10px] shadow-sm">
-            <FiStar className="text-warning" />
-            4.9 average rating
-          </div>
         </div>
       </div>
     </section>

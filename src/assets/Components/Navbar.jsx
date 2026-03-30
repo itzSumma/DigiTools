@@ -1,43 +1,49 @@
-import { FiMenu, FiShoppingCart } from 'react-icons/fi'
+import { FiLogIn, FiMenu, FiShoppingCart } from 'react-icons/fi'
 
 const Navbar = ({ cartCount, onOpenCart }) => {
   return (
-    <header className="sticky top-0 z-40 border-b border-[#ede7ff] bg-white/95 backdrop-blur">
-      <div className="navbar mx-auto min-h-16 w-[min(1120px,calc(100%-1.5rem))] px-0">
-        <a className="text-lg font-extrabold tracking-tight md:text-xl" href="#hero">
-          <span className="text-primary">Digi</span>
-          <span>Tools</span>
+    <header className="sticky top-0 z-50 border-b border-[#ece8f7] bg-white/95 backdrop-blur">
+      <div className="mx-auto flex h-16 w-[min(1120px,calc(100%-1.5rem))] items-center justify-between gap-4">
+        <a className="text-[2rem] font-extrabold leading-none tracking-[-0.04em] text-[#7a38f5]" href="#hero">
+          DigiTools
         </a>
 
-        <nav
-          className="mx-auto hidden items-center gap-5 text-[11px] font-medium uppercase tracking-[0.18em] text-base-content/55 lg:flex"
-          aria-label="Primary"
-        >
-          <a className="hover:text-primary" href="#hero">Home</a>
-          <a className="hover:text-primary" href="#products">Products</a>
-          <a className="hover:text-primary" href="#pricing">Pricing</a>
-          <a className="hover:text-primary" href="#steps">Process</a>
-          <a className="hover:text-primary" href="#footer">About</a>
+        <nav className="hidden items-center gap-8 text-sm font-medium text-slate-700 lg:flex">
+          <a href="#products" className="transition hover:text-[#7a38f5]">Products</a>
+          <a href="#steps" className="transition hover:text-[#7a38f5]">Features</a>
+          <a href="#pricing" className="transition hover:text-[#7a38f5]">Pricing</a>
+          <a href="#footer" className="transition hover:text-[#7a38f5]">Testimonials</a>
+          <a href="#footer" className="transition hover:text-[#7a38f5]">FAQ</a>
         </nav>
 
-        <div className="ml-auto flex items-center gap-3">
+        <div className="flex items-center gap-3">
           <button
             type="button"
-            className="btn btn-circle btn-ghost relative h-10 min-h-10 w-10 border border-[#ece7fb] bg-white"
             onClick={onOpenCart}
             aria-label={`Cart with ${cartCount} items`}
+            className="relative inline-flex h-10 w-10 items-center justify-center rounded-full border border-transparent text-slate-700 transition hover:border-[#ece8f7] hover:bg-[#faf8ff]"
           >
             <FiShoppingCart className="text-base" />
-            <span className="badge badge-primary badge-sm absolute -top-2 -right-2 min-w-5 border-0 text-[10px]">
+            <span className="absolute -right-1 -top-1 inline-flex h-4 min-w-4 items-center justify-center rounded-full bg-[#7a38f5] px-1 text-[10px] font-semibold text-white">
               {cartCount}
             </span>
           </button>
-          <a href="#products" className="btn btn-primary hidden min-h-9 rounded-full px-5 text-[11px] uppercase tracking-[0.18em] lg:inline-flex">
+          <a
+            href="#footer"
+            className="hidden items-center gap-2 text-sm font-medium text-slate-700 transition hover:text-[#7a38f5] md:inline-flex"
+          >
+            <FiLogIn className="text-sm" />
+            Login
+          </a>
+          <a
+            href="#products"
+            className="hidden rounded-full bg-gradient-to-r from-[#6f3df4] to-[#9c16f7] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_10px_30px_rgba(122,56,245,0.22)] transition hover:translate-y-[-1px] md:inline-flex"
+          >
             Get Started
           </a>
           <button
             type="button"
-            className="btn btn-circle btn-ghost border border-base-300 lg:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#ece8f7] text-slate-700 lg:hidden"
             aria-label="Open menu"
           >
             <FiMenu />

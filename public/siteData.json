@@ -3,121 +3,118 @@
     {
       "id": 1,
       "name": "AI Writing Pro",
-      "description": "Draft blogs, captions, and client copy with ready-made prompts.",
-      "price": 19,
+      "description": "Generate high-quality content, blogs, and marketing copy in seconds with advanced AI.",
+      "price": 29,
       "period": "monthly",
-      "tag": "Popular",
-      "tagType": "popular",
+      "tag": "Best Seller",
+      "tagType": "best-seller",
       "rating": "4.9",
-      "iconKey": "writingImage",
-      "accent": "violet",
-      "features": ["50+ writing workflows", "Instant tone switch", "Team content planner"]
+      "icon": "writingImage",
+      "features": ["Unlimited AI generations", "50+ writing templates", "Grammar checker"]
     },
     {
       "id": 2,
       "name": "Design Templates Pack",
-      "description": "Premium social graphics, carousel layouts, and ad creative kits.",
-      "price": 29,
+      "description": "2000+ premium templates for social media, presentations, and marketing materials.",
+      "price": 49,
       "period": "one-time",
-      "tag": "Best Seller",
-      "tagType": "best",
+      "tag": "Popular",
+      "tagType": "popular",
       "rating": "4.8",
-      "iconKey": "designToolImage",
-      "accent": "orange",
-      "features": ["120+ editable templates", "Canva-friendly files", "Brand color presets"]
+      "icon": "designToolImage",
+      "features": ["2000+ templates", "Commercial license", "Editable formats"]
     },
     {
       "id": 3,
-      "name": "Resume Stack Kit",
-      "description": "Clean resume templates with ATS-safe formatting and matching covers.",
+      "name": "Premium Stock Assets",
+      "description": "Access millions of royalty-free photos, videos, and graphics for your projects.",
+      "price": 19,
+      "period": "monthly",
+      "tag": "New",
+      "tagType": "new",
+      "rating": "4.7",
+      "icon": "shoppingCartImage",
+      "features": ["10M+ assets", "Commercial use", "No attribution"]
+    },
+    {
+      "id": 4,
+      "name": "Automation Toolkit",
+      "description": "Automate repetitive tasks and streamline your workflow with powerful tools.",
+      "price": 79,
+      "period": "monthly",
+      "tag": "Popular",
+      "tagType": "popular",
+      "rating": "4.9",
+      "icon": "operationImage",
+      "features": ["50+ automations", "API access", "Custom workflows"]
+    },
+    {
+      "id": 5,
+      "name": "Resume Builder Pro",
+      "description": "Create professional resumes and cover letters that land interviews.",
       "price": 15,
       "period": "one-time",
       "tag": "New",
       "tagType": "new",
-      "rating": "4.7",
-      "iconKey": "portfolioImage",
-      "accent": "teal",
-      "features": ["ATS-ready sections", "Cover letter layout", "Portfolio page bonus"]
-    },
-    {
-      "id": 4,
-      "name": "Automation Hub",
-      "description": "Mini systems to automate repetitive operations in your workflow.",
-      "price": 39,
-      "period": "yearly",
-      "tag": "Popular",
-      "tagType": "popular",
-      "rating": "4.9",
-      "iconKey": "operationImage",
-      "accent": "green",
-      "features": ["Zapier-ready map", "Notion pipeline plan", "Client delivery checklist"]
-    },
-    {
-      "id": 5,
-      "name": "Reels Builder Pro",
-      "description": "Fast-moving script and storyboard toolkit for short-form content.",
-      "price": 24,
-      "period": "monthly",
-      "tag": "Trending",
-      "tagType": "best",
       "rating": "4.8",
-      "iconKey": "socialMediaImage",
-      "accent": "pink",
-      "features": ["30 viral hooks", "Storyboard prompts", "Caption templates included"]
+      "icon": "portfolioImage",
+      "features": ["100+ templates", "ATS optimization", "Export to PDF"]
     },
     {
       "id": 6,
-      "name": "Social Media Planner",
-      "description": "Weekly post planning board with content buckets and KPI tracking.",
-      "price": 17,
+      "name": "Social Media Content Kit",
+      "description": "Complete toolkit for creating engaging social media content across all platforms.",
+      "price": 39,
       "period": "monthly",
-      "tag": "Starter",
-      "tagType": "new",
-      "rating": "4.6",
-      "iconKey": "shoppingCartImage",
-      "accent": "blue",
-      "features": ["Monthly calendar", "Content pillar map", "Campaign notes panel"]
+      "tag": "Best Seller",
+      "tagType": "best-seller",
+      "rating": "4.9",
+      "icon": "socialMediaImage",
+      "features": ["5000+ assets", "Scheduler included", "Analytics dashboard"]
     }
   ],
   "steps": [
     {
-      "title": "Browse Resources",
-      "text": "Pick the digital tools that match your workflow and budget.",
-      "iconKey": "userImage"
+      "title": "Create Account",
+      "text": "Sign up for free in seconds. No credit card required to get started.",
+      "icon": "userImage"
     },
     {
       "title": "Choose Products",
-      "text": "Compare features, pricing, and tags before adding items to cart.",
-      "iconKey": "packageImage"
+      "text": "Browse our catalog and select the tools that fit your needs.",
+      "icon": "packageImage"
     },
     {
-      "title": "Start Growing",
-      "text": "Checkout and start using the tools right away in your projects.",
-      "iconKey": "rocketImage"
+      "title": "Start Creating",
+      "text": "Download and start using your premium tools immediately.",
+      "icon": "rocketImage"
     }
   ],
   "pricingPlans": [
     {
       "name": "Starter",
       "price": "$0",
-      "subtitle": "Best for trying the platform",
-      "features": ["3 free resources", "Basic support", "Starter dashboard"],
-      "cta": "Get Started",
+      "period": "/Month",
+      "subtitle": "Perfect for getting started",
+      "features": ["Access to 10 free tools", "Basic templates", "Community support", "1 project per month"],
+      "cta": "Get Started Free",
       "featured": false
     },
     {
       "name": "Pro",
       "price": "$29",
-      "subtitle": "Perfect for freelancers and creators",
-      "features": ["Unlimited downloads", "Priority updates", "Premium templates"],
-      "cta": "Choose Pro",
+      "period": "/Month",
+      "subtitle": "Best for professionals",
+      "features": ["Access to all premium tools", "Unlimited templates", "Priority support", "Unlimited projects", "Cloud sync", "Advanced analytics"],
+      "cta": "Start Pro Trial",
       "featured": true
     },
     {
       "name": "Enterprise",
       "price": "$99",
-      "subtitle": "For teams handling multiple brands",
-      "features": ["Team access", "Dedicated onboarding", "Advanced workflow kits"],
+      "period": "/Month",
+      "subtitle": "For teams and businesses",
+      "features": ["Everything in Pro", "Team collaboration", "Custom integrations", "Dedicated support", "SLA guarantee", "Custom branding"],
       "cta": "Contact Sales",
       "featured": false
     }

@@ -1,6 +1,8 @@
 .card,
 .btn,
 .badge,
-.stat {
+.stat,
+a,
+button {
   transition: all 180ms ease;
 }

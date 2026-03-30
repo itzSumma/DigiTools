@@ -1,49 +1,70 @@
-import { FiMinus, FiStar, FiUsers } from 'react-icons/fi'
+import { FiFacebook, FiGlobe, FiTwitter } from 'react-icons/fi'
 
 const Footer = () => {
   return (
-    <footer className="mt-0 bg-[#0d1630] text-slate-100" id="footer">
-      <div className="mx-auto grid w-[min(1120px,calc(100%-1.5rem))] gap-10 px-0 py-12 md:grid-cols-2 xl:grid-cols-4">
-        <div className="space-y-4">
-          <a className="text-xl font-extrabold tracking-tight text-white" href="#hero">
-            <span className="text-primary">Digi</span>
-            <span>Tools</span>
-          </a>
-          <p className="max-w-xs text-[12px] leading-6 text-slate-300">
-            Premium templates, growth tools, and digital systems designed for modern
-            creators.
-          </p>
+    <footer className="bg-[#11192f] py-16 text-white" id="footer">
+      <div className="mx-auto w-[min(1120px,calc(100%-1.5rem))]">
+        <div className="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr_1fr_1fr]">
+          <div>
+            <h3 className="text-[2.2rem] font-extrabold tracking-[-0.05em]">DigiTools</h3>
+            <p className="mt-5 max-w-[18rem] text-sm leading-7 text-white/65">
+              Premium digital tools for creators, professionals, and businesses.
+              Work smarter with our suite of powerful tools.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-lg font-semibold">Product</h4>
+            <div className="mt-5 space-y-3 text-sm text-white/65">
+              <a className="block hover:text-white" href="#steps">Features</a>
+              <a className="block hover:text-white" href="#pricing">Pricing</a>
+              <a className="block hover:text-white" href="#products">Templates</a>
+              <a className="block hover:text-white" href="#products">Integrations</a>
+            </div>
+          </div>
+
+          <div>
+            <h4 className="text-lg font-semibold">Company</h4>
+            <div className="mt-5 space-y-3 text-sm text-white/65">
+              <a className="block hover:text-white" href="#hero">About</a>
+              <a className="block hover:text-white" href="#footer">Blog</a>
+              <a className="block hover:text-white" href="#footer">Careers</a>
+              <a className="block hover:text-white" href="#footer">Press</a>
+            </div>
+          </div>
+
+          <div>
+            <h4 className="text-lg font-semibold">Resources</h4>
+            <div className="mt-5 space-y-3 text-sm text-white/65">
+              <a className="block hover:text-white" href="#footer">Documentation</a>
+              <a className="block hover:text-white" href="#footer">Help Center</a>
+              <a className="block hover:text-white" href="#footer">Community</a>
+              <a className="block hover:text-white" href="#footer">Contact</a>
+            </div>
+          </div>
+
+          <div>
+            <h4 className="text-lg font-semibold">Social Links</h4>
+            <div className="mt-5 flex items-center gap-3">
+              <a href="#footer" className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#11192f]">
+                <FiGlobe />
+              </a>
+              <a href="#footer" className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#11192f]">
+                <FiFacebook />
+              </a>
+              <a href="#footer" className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#11192f]">
+                <FiTwitter />
+              </a>
+            </div>
+          </div>
         </div>
 
-        <div className="space-y-3">
-          <h4 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400">Product</h4>
-          <a className="block text-[12px] text-slate-300 hover:text-white" href="#products">Marketplace</a>
-          <a className="block text-[12px] text-slate-300 hover:text-white" href="#pricing">Pricing</a>
-          <a className="block text-[12px] text-slate-300 hover:text-white" href="#steps">Resources</a>
-        </div>
-
-        <div className="space-y-3">
-          <h4 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400">Company</h4>
-          <a className="block text-[12px] text-slate-300 hover:text-white" href="#hero">About</a>
-          <a className="block text-[12px] text-slate-300 hover:text-white" href="#footer">Contact</a>
-          <a className="block text-[12px] text-slate-300 hover:text-white" href="#pricing">Plans</a>
-        </div>
-
-        <div className="space-y-4">
-          <h4 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400">Highlights</h4>
-          <div className="space-y-3 text-[12px] text-slate-300">
-            <span className="flex items-center gap-3">
-              <FiUsers />
-              Community
-            </span>
-            <span className="flex items-center gap-3">
-              <FiStar />
-              Rated 4.9
-            </span>
-            <span className="flex items-center gap-3">
-              <FiMinus />
-              Clean UI
-            </span>
+        <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-8 text-sm text-white/45 md:flex-row md:items-center md:justify-between">
+          <p>© 2026 DigiTools. All rights reserved.</p>
+          <div className="flex flex-wrap items-center gap-6">
+            <a href="#footer">Privacy Policy</a>
+            <a href="#footer">Terms of Service</a>
+            <a href="#footer">Cookies</a>
           </div>
         </div>
       </div>

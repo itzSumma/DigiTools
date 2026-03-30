@@ -42,7 +42,6 @@ function App() {
   })
   const [activeTab, setActiveTab] = useState('products')
   const [cartItems, setCartItems] = useState([])
-  const [addedState, setAddedState] = useState({})
 
   useEffect(() => {
     let cancelled = false
@@ -56,11 +55,11 @@ function App() {
       setCatalog({
         products: data.products.map((product) => ({
           ...product,
-          icon: assetMap[product.iconKey],
+          iconSrc: assetMap[product.icon],
         })),
         steps: data.steps.map((step) => ({
           ...step,
-          icon: assetMap[step.iconKey],
+          iconSrc: assetMap[step.icon],
         })),
         pricingPlans: data.pricingPlans,
       })
@@ -80,21 +79,12 @@ function App() {
 
   const handleAddToCart = (product) => {
     setCartItems((current) => [...current, product])
-    setAddedState((current) => ({ ...current, [product.id]: true }))
-
-    window.setTimeout(() => {
-      setAddedState((current) => ({ ...current, [product.id]: false }))
-    }, 1200)
   }
 
-  const handleRemoveItem = (productId) => {
-    setCartItems((current) => {
-      const index = current.findIndex((item) => item.id === productId)
-
-      if (index === -1) return current
-
-      return current.filter((_, itemIndex) => itemIndex !== index)
-    })
+  const handleRemoveItem = (productId, indexToRemove) => {
+    setCartItems((current) =>
+      current.filter((item, index) => !(item.id === productId && index === indexToRemove)),
+    )
   }
 
   const handleCheckout = () => {
@@ -103,7 +93,7 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-base-100 text-base-content">
+    <div className="min-h-screen bg-[#fcfcff] text-slate-900">
       <Navbar
         cartCount={cartItems.length}
         onOpenCart={() => setActiveTab('cart')}
@@ -116,7 +106,6 @@ function App() {
           cartItems={cartItems}
           products={catalog.products}
           totalPrice={totalPrice}
-          addedState={addedState}
           onSetActiveTab={setActiveTab}
           onAddToCart={handleAddToCart}
           onRemoveItem={handleRemoveItem}

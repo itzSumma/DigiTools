@@ -27,50 +27,52 @@ const formatPeriod = (period) => {
 
 const ProductCard = ({ product, isAdded, onAddToCart }) => {
   return (
-    <article className={`${surfaceCard} group p-5 transition duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_22px_48px_rgba(28,30,53,0.12)]`}>
-      <div className="flex items-start justify-between gap-4">
-        <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#f0ebfb] bg-white shadow-sm transition duration-300 group-hover:scale-110 group-hover:shadow-[0_10px_24px_rgba(111,61,244,0.15)]">
-          <img
-            src={product.iconSrc}
-            alt={product.name}
-            className="h-7 w-7 object-contain transition duration-300 group-hover:scale-110"
-          />
+    <article className="animated-border-shell group transition duration-300 ease-out hover:-translate-y-2">
+      <div className={`${surfaceCard} animated-border-inner p-5 transition duration-300 ease-out group-hover:shadow-[0_22px_48px_rgba(28,30,53,0.12)]`}>
+        <div className="flex items-start justify-between gap-4">
+          <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#f0ebfb] bg-white shadow-sm transition duration-300 group-hover:scale-110">
+            <img
+              src={product.iconSrc}
+              alt={product.name}
+              className="h-7 w-7 object-contain transition duration-300 group-hover:scale-110"
+            />
+          </div>
+          <span className={`rounded-full px-3 py-1 text-[11px] font-semibold ${tagStyles[product.tagType]}`}>
+            {product.tag}
+          </span>
         </div>
-        <span className={`rounded-full px-3 py-1 text-[11px] font-semibold ${tagStyles[product.tagType]}`}>
-          {product.tag}
-        </span>
+
+        <h3 className="mt-5 text-[1.7rem] font-bold tracking-[-0.04em] text-[#1d2438] transition duration-300 group-hover:text-[#6f3df4] md:text-[1.75rem]">
+          {product.name}
+        </h3>
+        <p className="mt-3 text-md leading-6 text-[#8b95a9]">{product.description}</p>
+
+        <div className="mt-4 flex items-end gap-1">
+          <strong className="text-[2rem] font-extrabold tracking-[-0.05em] text-[#1d2438]">${product.price}</strong>
+          <span className="pb-1 text-md text-[#8b95a9]">{formatPeriod(product.period)}</span>
+        </div>
+
+        <ul className="mt-4 space-y-2.5">
+          {product.features.map((feature) => (
+            <li key={feature} className="flex items-center gap-2 text-sm text-[#7c869d]">
+              <FiCheck className="text-[#52d67f]" />
+              <span>{feature}</span>
+            </li>
+          ))}
+        </ul>
+
+        <button
+          type="button"
+          onClick={() => onAddToCart(product)}
+          className={
+            isAdded
+              ? 'mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#22c55e] px-5 py-3 text-md font-semibold text-white shadow-[0_10px_24px_rgba(34,197,94,0.22)] transition duration-300 group-hover:-translate-y-0.5'
+              : `${primaryButton} mt-6 w-full group-hover:-translate-y-0.5`
+          }
+        >
+          {isAdded ? 'Added' : 'Buy Now'}
+        </button>
       </div>
-
-      <h3 className="mt-5 text-[1.7rem] font-bold tracking-[-0.04em] text-[#1d2438] transition duration-300 group-hover:text-[#6f3df4] md:text-[1.75rem]">
-        {product.name}
-      </h3>
-      <p className="mt-3 text-sm leading-6 text-[#8b95a9]">{product.description}</p>
-
-      <div className="mt-4 flex items-end gap-1">
-        <strong className="text-[2rem] font-extrabold tracking-[-0.05em] text-[#1d2438]">${product.price}</strong>
-        <span className="pb-1 text-sm text-[#8b95a9]">{formatPeriod(product.period)}</span>
-      </div>
-
-      <ul className="mt-4 space-y-2.5">
-        {product.features.map((feature) => (
-          <li key={feature} className="flex items-center gap-2 text-sm text-[#7c869d]">
-            <FiCheck className="text-[#52d67f]" />
-            <span>{feature}</span>
-          </li>
-        ))}
-      </ul>
-
-      <button
-        type="button"
-        onClick={() => onAddToCart(product)}
-        className={
-          isAdded
-            ? 'mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#22c55e] px-5 py-3 text-sm font-semibold text-white shadow-[0_10px_24px_rgba(34,197,94,0.22)] transition duration-300 group-hover:-translate-y-0.5'
-            : `${primaryButton} mt-6 w-full group-hover:-translate-y-0.5`
-        }
-      >
-        {isAdded ? 'Added' : 'Buy Now'}
-      </button>
     </article>
   )
 }
@@ -83,7 +85,7 @@ const CartSection = ({ cartItems, totalPrice, onRemoveItem, onCheckout }) => {
           <FiShoppingCart className="text-xl" />
         </div>
         <h3 className="mt-5 text-2xl font-bold tracking-[-0.03em] text-[#1d2438]">Your cart is empty</h3>
-        <p className="mt-3 text-sm text-[#8b95a9]">Click Cart any time to review the products you select.</p>
+        <p className="mt-3 text-md text-[#8b95a9]">Click Cart any time to review the products you select.</p>
       </div>
     )
   }
@@ -103,12 +105,12 @@ const CartSection = ({ cartItems, totalPrice, onRemoveItem, onCheckout }) => {
             </div>
             <div className="min-w-0 flex-1">
               <p className="truncate text-lg font-semibold text-[#1d2438]">{item.name}</p>
-              <p className="mt-1 text-sm text-[#8b95a9]">${item.price}</p>
+              <p className="mt-1 text-md text-[#8b95a9]">${item.price}</p>
             </div>
             <button
               type="button"
               onClick={() => onRemoveItem(item.id, index)}
-              className="text-sm font-semibold text-[#ff4a7b]"
+              className="text-md font-semibold text-[#ff4a7b]"
             >
               Remove
             </button>
@@ -116,7 +118,7 @@ const CartSection = ({ cartItems, totalPrice, onRemoveItem, onCheckout }) => {
         ))}
       </div>
 
-      <div className="mt-5 flex items-center justify-between text-sm text-[#8b95a9]">
+      <div className="mt-5 flex items-center justify-between text-md text-[#8b95a9]">
         <span>Total:</span>
         <strong className="text-[2rem] font-extrabold tracking-[-0.04em] text-[#1d2438]">${totalPrice}</strong>
       </div>

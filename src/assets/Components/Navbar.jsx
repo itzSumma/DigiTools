@@ -32,12 +32,12 @@ const Navbar = ({ cartCount, onOpenCart }) => {
             href="#footer"
             className="hidden items-center gap-2 text-md font-medium text-slate-700 transition hover:text-[#7a38f5] md:inline-flex"
           >
-            <FiLogIn className="text-base" />
+            <FiLogIn className="text-md" />
             Login
           </a>
           <a
             href="#products"
-            className="hidden rounded-full bg-gradient-to-r from-[#6f3df4] to-[#9c16f7] px-5 py-2.5 text-base font-semibold text-white shadow-[0_10px_30px_rgba(122,56,245,0.22)] transition hover:translate-y-[-1px] md:inline-flex"
+            className="hidden rounded-full bg-linear-to-r from-[#6f3df4] to-[#9c16f7] px-5 py-2.5 text-md font-semibold text-white shadow-[0_10px_30px_rgba(122,56,245,0.22)] transition hover:translate-y-[-1px] md:inline-flex"
           >
             Get Started
           </a>

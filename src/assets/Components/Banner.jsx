@@ -15,22 +15,22 @@ const Banner = ({ heroAssets }) => {
         <h1 className="mt-6 text-[2.6rem] font-extrabold leading-[0.95] tracking-[-0.05em] text-[#20263a] md:text-[4.5rem]">
           Supercharge Your Digital Workflow
         </h1>
-        <p className="mt-5 max-w-[31rem] text-base leading-8 text-[#75809a]">
+        <p className="mt-5 max-w-[31rem] text-md leading-8 text-[#75809a]">
           Access premium AI tools, design assets, templates, and productivity
           software all in one place. Start creating faster today.
         </p>
         <div className="mt-8 flex flex-wrap items-center gap-4">
           <a
             href="#products"
-            className="inline-flex items-center rounded-full bg-gradient-to-r from-[#6f3df4] to-[#9c16f7] px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_rgba(122,56,245,0.22)]"
+            className="inline-flex items-center rounded-full bg-gradient-to-r from-[#6f3df4] to-[#9c16f7] px-6 py-3 text-md font-semibold text-white shadow-[0_10px_30px_rgba(122,56,245,0.22)] transition hover:translate-y-[-1px]"
           >
             Explore Products
           </a>
           <button
             type="button"
-            className="inline-flex items-center gap-2 rounded-full border border-[#a35dff] px-6 py-3 text-sm font-semibold text-[#7a38f5]"
+            className="inline-flex items-center gap-2 rounded-full border border-[#a35dff] px-6 py-3 text-md font-semibold text-[#7a38f5] transition hover:translate-y-[-1px]"
           >
-            <FiPlay className="text-sm" />
+            <FiPlay className="text-md" />
             Watch Demo
           </button>
         </div>

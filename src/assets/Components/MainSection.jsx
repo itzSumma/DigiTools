@@ -25,7 +25,7 @@ const formatPeriod = (period) => {
   return '/Mo'
 }
 
-const ProductCard = ({ product, onAddToCart }) => {
+const ProductCard = ({ product, isAdded, onAddToCart }) => {
   return (
     <article className={`${surfaceCard} p-5`}>
       <div className="flex items-start justify-between gap-4">
@@ -63,9 +63,13 @@ const ProductCard = ({ product, onAddToCart }) => {
       <button
         type="button"
         onClick={() => onAddToCart(product)}
-        className={`${primaryButton} mt-6 w-full`}
+        className={
+          isAdded
+            ? 'mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#22c55e] px-5 py-3 text-sm font-semibold text-white shadow-[0_10px_24px_rgba(34,197,94,0.22)]'
+            : `${primaryButton} mt-6 w-full`
+        }
       >
-        Buy Now
+        {isAdded ? 'Added' : 'Buy Now'}
       </button>
     </article>
   )
@@ -133,6 +137,7 @@ const MainSection = ({
   cartItems,
   products,
   totalPrice,
+  addedItems,
   onSetActiveTab,
   onAddToCart,
   onRemoveItem,
@@ -171,7 +176,12 @@ const MainSection = ({
         {activeTab === 'products' ? (
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {products.map((product) => (
-              <ProductCard key={product.id} product={product} onAddToCart={onAddToCart} />
+              <ProductCard
+                key={product.id}
+                product={product}
+                isAdded={Boolean(addedItems[product.id])}
+                onAddToCart={onAddToCart}
+              />
             ))}
           </div>
         ) : (

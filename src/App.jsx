@@ -54,6 +54,7 @@ function App() {
   })
   const [activeTab, setActiveTab] = useState('products')
   const [cartItems, setCartItems] = useState([])
+  const [addedItems, setAddedItems] = useState({})
 
   useEffect(() => {
     let cancelled = false
@@ -80,17 +81,35 @@ function App() {
   )
 
   const handleAddToCart = (product) => {
-    setCartItems((current) => [...current, product])
+    setCartItems((current) => {
+      if (current.some((item) => item.id === product.id)) {
+        return current
+      }
+
+      return [...current, product]
+    })
+
+    setAddedItems((current) => ({ ...current, [product.id]: true }))
   }
 
   const handleRemoveItem = (productId, indexToRemove) => {
-    setCartItems((current) =>
-      current.filter((item, index) => !(item.id === productId && index === indexToRemove)),
-    )
+    setCartItems((current) => {
+      const nextItems = current.filter(
+        (item, index) => !(item.id === productId && index === indexToRemove),
+      )
+
+      setAddedItems((currentAdded) => ({
+        ...currentAdded,
+        [productId]: nextItems.some((item) => item.id === productId),
+      }))
+
+      return nextItems
+    })
   }
 
   const handleCheckout = () => {
     setCartItems([])
+    setAddedItems({})
     setActiveTab('products')
   }
 
@@ -108,6 +127,7 @@ function App() {
           cartItems={cartItems}
           products={catalog.products}
           totalPrice={totalPrice}
+          addedItems={addedItems}
           onSetActiveTab={setActiveTab}
           onAddToCart={handleAddToCart}
           onRemoveItem={handleRemoveItem}

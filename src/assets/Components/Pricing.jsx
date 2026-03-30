@@ -1,8 +1,8 @@
-import React from 'react';
+import { FiCheckCircle } from 'react-icons/fi'
 
-const Pricing = ({pricingPlans}) => {
-    return (
-        <section className="mx-auto w-[min(1120px,calc(100%-1.5rem))] py-16 md:py-20" id="pricing">
+const Pricing = ({ pricingPlans }) => {
+  return (
+    <section className="mx-auto w-[min(1120px,calc(100%-1.5rem))] py-16 md:py-20" id="pricing">
       <div className="mx-auto mb-10 max-w-2xl text-center">
         <span className="badge badge-primary badge-outline rounded-full px-4 py-3 uppercase tracking-[0.2em]">
           Flexible Plans
@@ -14,7 +14,7 @@ const Pricing = ({pricingPlans}) => {
         {pricingPlans.map((plan) => (
           <article
             key={plan.name}
-            className={`card border shadow-xl ${
+            className={`card border shadow-sm ${
               plan.featured ? 'border-primary bg-primary text-primary-content' : 'border-base-300 bg-base-100'
             }`}
           >
@@ -39,7 +39,9 @@ const Pricing = ({pricingPlans}) => {
                 {plan.features.map((feature) => (
                   <li
                     key={feature}
-                    className={`flex items-center gap-3 text-sm ${plan.featured ? 'text-primary-content/80' : 'text-base-content/70'}`}
+                    className={`flex items-center gap-3 text-sm ${
+                      plan.featured ? 'text-primary-content/80' : 'text-base-content/70'
+                    }`}
                   >
                     <FiCheckCircle className={plan.featured ? 'text-primary-content' : 'text-primary'} />
                     <span>{feature}</span>
@@ -58,7 +60,7 @@ const Pricing = ({pricingPlans}) => {
         ))}
       </div>
     </section>
-    );
-};
+  )
+}
 
-export default Pricing;
+export default Pricing

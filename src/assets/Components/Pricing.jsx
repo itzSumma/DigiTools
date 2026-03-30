@@ -23,7 +23,7 @@ const Pricing = ({ pricingPlans }) => {
           {pricingPlans.map((plan) => (
             <article
               key={plan.name}
-              className={`relative rounded-[1.25rem] px-6 py-6 ${
+              className={`group relative rounded-[1.25rem] px-6 py-6 transition duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_22px_48px_rgba(28,30,53,0.12)] ${
                 plan.featured
                   ? 'border-transparent bg-gradient-to-br from-[#6f3df4] via-[#7c23ff] to-[#bb16ff] text-white'
                   : `${surfaceCard} bg-[#f9faff] text-[#1d2438]`
@@ -35,7 +35,7 @@ const Pricing = ({ pricingPlans }) => {
                 </span>
               ) : null}
 
-              <h3 className="text-[1.85rem] font-bold tracking-[-0.04em]">{plan.name}</h3>
+              <h3 className="text-[1.85rem] font-bold tracking-[-0.04em] transition duration-300 group-hover:translate-x-1">{plan.name}</h3>
               <p className={`mt-2 text-sm ${plan.featured ? 'text-white/80' : 'text-[#8b95a9]'}`}>{plan.subtitle}</p>
 
               <div className="mt-6 flex items-end gap-1">
@@ -59,8 +59,8 @@ const Pricing = ({ pricingPlans }) => {
                 type="button"
                 className={`mt-8 inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-semibold ${
                   plan.featured
-                    ? 'bg-white text-[#6f3df4]'
-                    : primaryButton
+                    ? 'bg-white text-[#6f3df4] transition duration-300 group-hover:-translate-y-0.5'
+                    : `${primaryButton} group-hover:-translate-y-0.5`
                 }`}
               >
                 {plan.cta}

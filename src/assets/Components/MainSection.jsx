@@ -27,13 +27,13 @@ const formatPeriod = (period) => {
 
 const ProductCard = ({ product, isAdded, onAddToCart }) => {
   return (
-    <article className={`${surfaceCard} p-5`}>
+    <article className={`${surfaceCard} group p-5 transition duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_22px_48px_rgba(28,30,53,0.12)]`}>
       <div className="flex items-start justify-between gap-4">
-        <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#f0ebfb] bg-white shadow-sm">
+        <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#f0ebfb] bg-white shadow-sm transition duration-300 group-hover:scale-110 group-hover:shadow-[0_10px_24px_rgba(111,61,244,0.15)]">
           <img
             src={product.iconSrc}
             alt={product.name}
-            className="h-7 w-7 object-contain"
+            className="h-7 w-7 object-contain transition duration-300 group-hover:scale-110"
           />
         </div>
         <span className={`rounded-full px-3 py-1 text-[11px] font-semibold ${tagStyles[product.tagType]}`}>
@@ -41,7 +41,7 @@ const ProductCard = ({ product, isAdded, onAddToCart }) => {
         </span>
       </div>
 
-      <h3 className="mt-5 text-[1.7rem] font-bold tracking-[-0.04em] text-[#1d2438] md:text-[1.75rem]">
+      <h3 className="mt-5 text-[1.7rem] font-bold tracking-[-0.04em] text-[#1d2438] transition duration-300 group-hover:text-[#6f3df4] md:text-[1.75rem]">
         {product.name}
       </h3>
       <p className="mt-3 text-sm leading-6 text-[#8b95a9]">{product.description}</p>
@@ -65,8 +65,8 @@ const ProductCard = ({ product, isAdded, onAddToCart }) => {
         onClick={() => onAddToCart(product)}
         className={
           isAdded
-            ? 'mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#22c55e] px-5 py-3 text-sm font-semibold text-white shadow-[0_10px_24px_rgba(34,197,94,0.22)]'
-            : `${primaryButton} mt-6 w-full`
+            ? 'mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#22c55e] px-5 py-3 text-sm font-semibold text-white shadow-[0_10px_24px_rgba(34,197,94,0.22)] transition duration-300 group-hover:-translate-y-0.5'
+            : `${primaryButton} mt-6 w-full group-hover:-translate-y-0.5`
         }
       >
         {isAdded ? 'Added' : 'Buy Now'}

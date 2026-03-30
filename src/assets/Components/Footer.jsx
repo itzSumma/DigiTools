@@ -1,5 +1,7 @@
 import { FiFacebook, FiGlobe, FiTwitter } from 'react-icons/fi'
 
+const socialLinkClass = 'flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#11192f] transition duration-300 hover:-translate-y-1 hover:bg-[#7a38f5] hover:text-white hover:shadow-[0_12px_24px_rgba(122,56,245,0.28)]'
+
 const Footer = () => {
   return (
     <footer className="bg-[#11192f] py-16 text-white" id="footer">
@@ -46,13 +48,13 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold">Social Links</h4>
             <div className="mt-5 flex items-center gap-3">
-              <a href="#footer" className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#11192f]">
+              <a href="#footer" className={socialLinkClass}>
                 <FiGlobe />
               </a>
-              <a href="#footer" className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#11192f]">
+              <a href="#footer" className={socialLinkClass}>
                 <FiFacebook />
               </a>
-              <a href="#footer" className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#11192f]">
+              <a href="#footer" className={socialLinkClass}>
                 <FiTwitter />
               </a>
             </div>

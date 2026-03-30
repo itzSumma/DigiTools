@@ -80,7 +80,7 @@ const ProductCard = ({ product, isAdded, onAddToCart }) => {
 const CartSection = ({ cartItems, totalPrice, onRemoveItem, onCheckout }) => {
   if (cartItems.length === 0) {
     return (
-      <div className={`${surfaceCard} rounded-[1.5rem] px-6 py-14 text-center`}>
+      <div className={`${surfaceCard} rounded-[1.5rem] px-4 py-12 text-center sm:px-6 sm:py-14`}>
         <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#f2ebff] text-[#7a38f5]">
           <FiShoppingCart className="text-xl" />
         </div>
@@ -91,20 +91,20 @@ const CartSection = ({ cartItems, totalPrice, onRemoveItem, onCheckout }) => {
   }
 
   return (
-    <div className={`${surfaceCard} rounded-[1.5rem] p-6 md:p-8`}>
+    <div className={`${surfaceCard} rounded-[1.5rem] p-4 sm:p-6 md:p-8`}>
       <h3 className="text-[2rem] font-bold tracking-[-0.04em] text-[#1d2438]">Your Cart</h3>
 
       <div className="mt-6 space-y-4">
         {cartItems.map((item, index) => (
           <div
             key={`${item.id}-${index}`}
-            className="flex min-h-[5.5rem] items-center gap-4 rounded-[1rem] bg-[#f8f8fd] px-4 py-4"
+            className="flex min-h-[5.5rem] items-center gap-3 rounded-[1rem] bg-[#f8f8fd] px-3 py-4 sm:gap-4 sm:px-4"
           >
             <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#efebf8] bg-white">
               <img src={item.iconSrc} alt="" aria-hidden="true" className="h-7 w-7 object-contain" />
             </div>
             <div className="min-w-0 flex-1">
-              <p className="truncate text-lg font-semibold text-[#1d2438]">{item.name}</p>
+              <p className="truncate text-base font-semibold text-[#1d2438] sm:text-lg">{item.name}</p>
               <p className="mt-1 text-md text-[#8b95a9]">${item.price}</p>
             </div>
             <button
@@ -118,9 +118,9 @@ const CartSection = ({ cartItems, totalPrice, onRemoveItem, onCheckout }) => {
         ))}
       </div>
 
-      <div className="mt-5 flex items-center justify-between text-md text-[#8b95a9]">
+      <div className="mt-5 flex items-center justify-between gap-3 text-sm text-[#8b95a9] sm:text-md">
         <span>Total:</span>
-        <strong className="text-[2rem] font-extrabold tracking-[-0.04em] text-[#1d2438]">${totalPrice}</strong>
+        <strong className="text-[1.6rem] font-extrabold tracking-[-0.04em] text-[#1d2438] sm:text-[2rem]">${totalPrice}</strong>
       </div>
 
       <button
@@ -176,7 +176,7 @@ const MainSection = ({
 
       <div className="mt-12">
         {activeTab === 'products' ? (
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
             {products.map((product) => (
               <ProductCard
                 key={product.id}

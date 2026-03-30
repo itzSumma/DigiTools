@@ -13,7 +13,7 @@ const PricingCard = ({ plan }) => {
 
   const cardContent = (
     <div
-      className={`relative flex h-full flex-col rounded-[1.25rem] px-6 py-6 transition duration-300 ease-out ${
+      className={`relative flex h-full flex-col rounded-[1.25rem] px-5 py-6 transition duration-300 ease-out sm:px-6 ${
         isFeatured
           ? 'bg-gradient-to-br from-[#6f3df4] via-[#7c23ff] to-[#bb16ff] text-white shadow-[0_22px_48px_rgba(111,61,244,0.22)]'
           : `${surfaceCard} animated-border-inner bg-[#f9faff] text-[#1d2438] group-hover:shadow-[0_22px_48px_rgba(28,30,53,0.12)]`
@@ -25,7 +25,7 @@ const PricingCard = ({ plan }) => {
         </span>
       ) : null}
 
-      <h3 className="text-[1.85rem] font-bold tracking-[-0.04em] transition duration-300 group-hover:translate-x-1">
+      <h3 className="text-[1.55rem] font-bold tracking-[-0.04em] transition duration-300 group-hover:translate-x-1 sm:text-[1.7rem] lg:text-[1.85rem]">
         {plan.name}
       </h3>
       <p className={`mt-2 text-sm ${isFeatured ? 'text-white/80' : 'text-[#8b95a9]'}`}>
@@ -33,7 +33,7 @@ const PricingCard = ({ plan }) => {
       </p>
 
       <div className="mt-6 flex items-end gap-1">
-        <strong className="text-[2.4rem] font-extrabold tracking-[-0.05em]">{plan.price}</strong>
+        <strong className="text-[2rem] font-extrabold tracking-[-0.05em] sm:text-[2.2rem] lg:text-[2.4rem]">{plan.price}</strong>
         <span className={`pb-1 text-sm ${isFeatured ? 'text-white/80' : 'text-[#8b95a9]'}`}>
           {plan.period}
         </span>
@@ -88,7 +88,7 @@ const Pricing = ({ pricingPlans }) => {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {pricingPlans.map((plan) => (
             <PricingCard key={plan.name} plan={plan} />
           ))}

@@ -15,7 +15,7 @@ const Steps = ({ steps }) => {
           <p className={sectionCopy}>Start using premium digital tools in minutes, not hours.</p>
         </div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {steps.map((step, index) => {
             return (
               <article
@@ -33,7 +33,7 @@ const Steps = ({ steps }) => {
                       className="h-8 w-8 object-contain transition duration-300 group-hover:scale-110"
                     />
                   </div>
-                  <h3 className="mt-7 text-[1.85rem] font-bold tracking-[-0.04em] text-[#1d2438] transition duration-300 group-hover:text-[#6f3df4]">
+                  <h3 className="mt-7 text-[1.5rem] font-bold tracking-[-0.04em] text-[#1d2438] transition duration-300 group-hover:text-[#6f3df4] sm:text-[1.7rem] lg:text-[1.85rem]">
                     {step.title}
                   </h3>
                   <p className="mt-4 flex-1 text-sm leading-6 text-[#8b95a9]">{step.text}</p>

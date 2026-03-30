@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import './App.css'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import Navbar from './assets/Components/Navbar'
 import Banner from './assets/Components/Banner'
 import States from './assets/Components/States'
@@ -81,18 +83,22 @@ function App() {
   )
 
   const handleAddToCart = (product) => {
-    setCartItems((current) => {
-      if (current.some((item) => item.id === product.id)) {
-        return current
-      }
+    const alreadyAdded = cartItems.some((item) => item.id === product.id)
 
-      return [...current, product]
-    })
+    if (alreadyAdded) {
+      toast.info(`${product.name} is already in your cart`)
+      return
+    }
+
+    setCartItems((current) => [...current, product])
+    toast.success(`${product.name} added to cart`)
 
     setAddedItems((current) => ({ ...current, [product.id]: true }))
   }
 
   const handleRemoveItem = (productId, indexToRemove) => {
+    const removedItem = cartItems[indexToRemove]
+
     setCartItems((current) => {
       const nextItems = current.filter(
         (item, index) => !(item.id === productId && index === indexToRemove),
@@ -105,12 +111,22 @@ function App() {
 
       return nextItems
     })
+
+    if (removedItem) {
+      toast.error(`${removedItem.name} removed from cart`)
+    }
   }
 
   const handleCheckout = () => {
+    if (cartItems.length === 0) {
+      toast.info('Your cart is already empty')
+      return
+    }
+
     setCartItems([])
     setAddedItems({})
     setActiveTab('products')
+    toast.success('Proceeding to checkout and clearing cart')
   }
 
   return (
@@ -138,6 +154,15 @@ function App() {
         <ReadyToStart />
       </main>
       <Footer />
+      <ToastContainer
+        position="top-right"
+        autoClose={2200}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        pauseOnHover
+        theme="colored"
+      />
     </div>
   )
 }

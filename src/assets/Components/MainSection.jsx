@@ -27,8 +27,8 @@ const formatPeriod = (period) => {
 
 const ProductCard = ({ product, isAdded, onAddToCart }) => {
   return (
-    <article className="animated-border-shell group transition duration-300 ease-out hover:-translate-y-2">
-      <div className={`${surfaceCard} animated-border-inner p-5 transition duration-300 ease-out group-hover:shadow-[0_22px_48px_rgba(28,30,53,0.12)]`}>
+    <article className="animated-border-shell group h-full transition duration-300 ease-out hover:-translate-y-2">
+      <div className={`${surfaceCard} animated-border-inner flex h-full flex-col p-5 transition duration-300 ease-out group-hover:shadow-[0_22px_48px_rgba(28,30,53,0.12)]`}>
         <div className="flex items-start justify-between gap-4">
           <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#f0ebfb] bg-white shadow-sm transition duration-300 group-hover:scale-110">
             <img
@@ -52,7 +52,7 @@ const ProductCard = ({ product, isAdded, onAddToCart }) => {
           <span className="pb-1 text-md text-[#8b95a9]">{formatPeriod(product.period)}</span>
         </div>
 
-        <ul className="mt-4 space-y-2.5">
+        <ul className="mt-4 flex-1 space-y-2.5">
           {product.features.map((feature) => (
             <li key={feature} className="flex items-center gap-2 text-sm text-[#7c869d]">
               <FiCheck className="text-[#52d67f]" />
@@ -98,7 +98,7 @@ const CartSection = ({ cartItems, totalPrice, onRemoveItem, onCheckout }) => {
         {cartItems.map((item, index) => (
           <div
             key={`${item.id}-${index}`}
-            className="flex items-center gap-4 rounded-[1rem] bg-[#f8f8fd] px-4 py-4"
+            className="flex min-h-[5.5rem] items-center gap-4 rounded-[1rem] bg-[#f8f8fd] px-4 py-4"
           >
             <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#efebf8] bg-white">
               <img src={item.iconSrc} alt="" aria-hidden="true" className="h-7 w-7 object-contain" />

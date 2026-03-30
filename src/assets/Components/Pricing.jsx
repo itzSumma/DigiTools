@@ -13,7 +13,7 @@ const PricingCard = ({ plan }) => {
 
   const cardContent = (
     <div
-      className={`relative rounded-[1.25rem] px-6 py-6 transition duration-300 ease-out ${
+      className={`relative flex h-full flex-col rounded-[1.25rem] px-6 py-6 transition duration-300 ease-out ${
         isFeatured
           ? 'bg-gradient-to-br from-[#6f3df4] via-[#7c23ff] to-[#bb16ff] text-white shadow-[0_22px_48px_rgba(111,61,244,0.22)]'
           : `${surfaceCard} animated-border-inner bg-[#f9faff] text-[#1d2438] group-hover:shadow-[0_22px_48px_rgba(28,30,53,0.12)]`
@@ -39,7 +39,7 @@ const PricingCard = ({ plan }) => {
         </span>
       </div>
 
-      <ul className="mt-6 space-y-3">
+      <ul className="mt-6 flex-1 space-y-3">
         {plan.features.map((feature) => (
           <li
             key={feature}
@@ -64,14 +64,14 @@ const PricingCard = ({ plan }) => {
 
   if (isFeatured) {
     return (
-      <article className="group relative transition duration-300 ease-out hover:-translate-y-2">
+      <article className="group relative h-full transition duration-300 ease-out hover:-translate-y-2">
         {cardContent}
       </article>
     )
   }
 
   return (
-    <article className="animated-border-shell group relative transition duration-300 ease-out hover:-translate-y-2">
+    <article className="animated-border-shell group relative h-full transition duration-300 ease-out hover:-translate-y-2">
       {cardContent}
     </article>
   )

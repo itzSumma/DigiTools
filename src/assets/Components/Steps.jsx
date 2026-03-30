@@ -20,9 +20,9 @@ const Steps = ({ steps }) => {
             return (
               <article
                 key={step.title}
-                className="animated-border-shell group relative transition duration-300 ease-out hover:-translate-y-2"
+                className="animated-border-shell group relative h-full transition duration-300 ease-out hover:-translate-y-2"
               >
-                <div className={`${surfaceCard} animated-border-inner relative px-6 py-10 text-center transition duration-300 ease-out group-hover:shadow-[0_22px_48px_rgba(28,30,53,0.10)]`}>
+                <div className={`${surfaceCard} animated-border-inner relative flex h-full flex-col px-6 py-10 text-center transition duration-300 ease-out group-hover:shadow-[0_22px_48px_rgba(28,30,53,0.10)]`}>
                   <span className="absolute right-4 top-4 inline-flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-[#6f3df4] to-[#9c16f7] text-xs font-semibold text-white">
                     0{index + 1}
                   </span>
@@ -36,7 +36,7 @@ const Steps = ({ steps }) => {
                   <h3 className="mt-7 text-[1.85rem] font-bold tracking-[-0.04em] text-[#1d2438] transition duration-300 group-hover:text-[#6f3df4]">
                     {step.title}
                   </h3>
-                  <p className="mt-4 text-sm leading-6 text-[#8b95a9]">{step.text}</p>
+                  <p className="mt-4 flex-1 text-sm leading-6 text-[#8b95a9]">{step.text}</p>
                 </div>
               </article>
             )

@@ -1,5 +1,6 @@
 
 import './App.css'
+import Navbar from './assets/Components/Navbar'
 
 function App() {
  
@@ -7,7 +8,7 @@ function App() {
   return (
     
      <div>
-<h1 className=''>hi</h1>
+<Navbar/>
 
      </div>
   )

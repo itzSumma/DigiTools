@@ -17,49 +17,49 @@ const tagStyles = {
 
 const Products = ({ products, addedState, onAddToCart }) => {
   return (
-    <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+    <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
       {products.map((product) => (
         <article
           key={product.id}
-          className="rounded-[1.5rem] border border-base-300 bg-base-100 p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+          className="rounded-[0.9rem] border border-[#e8e3f6] bg-white p-4 shadow-[0_10px_22px_rgba(21,20,39,0.04)] transition hover:-translate-y-1 hover:shadow-[0_18px_28px_rgba(21,20,39,0.06)]"
         >
-          <div className={`flex h-32 items-center justify-center rounded-[1.25rem] bg-gradient-to-br ${accentStyles[product.accent] || accentStyles.blue}`}>
-            <img src={product.icon} alt="" aria-hidden="true" className="h-20 w-20 object-contain" />
+          <div className={`flex h-20 items-center justify-center rounded-[0.75rem] bg-gradient-to-br ${accentStyles[product.accent] || accentStyles.blue}`}>
+            <img src={product.icon} alt="" aria-hidden="true" className="h-12 w-12 object-contain" />
           </div>
 
-          <div className="mt-5 flex items-start justify-between gap-3">
+          <div className="mt-4 flex items-start justify-between gap-3">
             <div>
-              <h3 className="text-lg font-bold">{product.name}</h3>
-              <div className="mt-2 flex items-center gap-2 text-sm text-base-content/60">
+              <h3 className="text-sm font-bold leading-5">{product.name}</h3>
+              <div className="mt-1.5 flex items-center gap-1.5 text-[11px] text-base-content/60">
                 <FiStar className="fill-warning text-warning" />
                 <span>{product.rating} rating</span>
               </div>
             </div>
-            <span className={`badge rounded-full ${tagStyles[product.tagType] || 'badge-neutral'}`}>
+            <span className={`badge h-6 rounded-full px-2 text-[10px] ${tagStyles[product.tagType] || 'badge-neutral'}`}>
               {product.tag}
             </span>
           </div>
 
-          <p className="mt-4 text-sm leading-6 text-base-content/70">{product.description}</p>
+          <p className="mt-3 text-[12px] leading-5 text-base-content/68">{product.description}</p>
 
-          <ul className="mt-4 space-y-2">
-            {product.features.map((feature) => (
-              <li key={feature} className="flex items-center gap-2 text-sm text-base-content/75">
+          <ul className="mt-3 space-y-1.5">
+            {product.features.slice(0, 2).map((feature) => (
+              <li key={feature} className="flex items-center gap-1.5 text-[11px] text-base-content/75">
                 <FiCheck className="text-primary" />
                 <span>{feature}</span>
               </li>
             ))}
           </ul>
 
-          <div className="mt-5 flex items-end justify-between gap-4">
+          <div className="mt-4 flex items-end justify-between gap-3">
             <div>
-              <span className="text-2xl font-black text-primary">${product.price}</span>
-              <p className="text-xs uppercase tracking-[0.2em] text-base-content/50">{product.period}</p>
+              <span className="text-xl font-black text-primary">${product.price}</span>
+              <p className="text-[10px] uppercase tracking-[0.18em] text-base-content/50">{product.period}</p>
             </div>
             <button
               type="button"
               onClick={() => onAddToCart(product)}
-              className={`btn rounded-full px-5 ${addedState[product.id] ? 'btn-success' : 'btn-primary'}`}
+              className={`btn min-h-8 rounded-full px-4 text-[10px] uppercase tracking-[0.16em] ${addedState[product.id] ? 'btn-success' : 'btn-primary'}`}
             >
               {addedState[product.id] ? 'Added' : 'Add to Cart'}
             </button>
@@ -86,23 +86,23 @@ const Cart = ({ cartItems, totalPrice, onRemoveItem, onCheckout }) => {
   }
 
   return (
-    <div className="mx-auto max-w-3xl rounded-[2rem] border border-base-300 bg-base-100 p-6 shadow-sm md:p-8">
-      <h3 className="text-xl font-bold">Your Cart</h3>
-      <div className="mt-6 space-y-4">
+    <div className="mx-auto max-w-3xl rounded-[0.8rem] border border-[#ebe6f8] bg-white p-6 shadow-[0_18px_30px_rgba(30,27,75,0.05)] md:p-8">
+      <h3 className="text-[13px] font-semibold uppercase tracking-[0.18em] text-base-content/55">Your Cart</h3>
+      <div className="mt-4 space-y-3">
         {cartItems.map((item, index) => (
           <div
             key={`${item.id}-${index}`}
-            className="flex items-center gap-4 rounded-[1.25rem] border border-base-300 px-4 py-3"
+            className="flex items-center gap-3 rounded-[0.7rem] border border-[#eee9fb] px-3 py-3"
           >
-            <img src={item.icon} alt="" aria-hidden="true" className="h-12 w-12 rounded-xl bg-base-200 p-2 object-contain" />
+            <img src={item.icon} alt="" aria-hidden="true" className="h-10 w-10 rounded-lg bg-[#f7f4ff] p-2 object-contain" />
             <div className="min-w-0 flex-1">
-              <p className="truncate font-semibold">{item.name}</p>
-              <p className="text-sm text-base-content/60">${item.price} / {item.period}</p>
+              <p className="truncate text-sm font-semibold">{item.name}</p>
+              <p className="text-[11px] text-base-content/60">${item.price} / {item.period}</p>
             </div>
             <button
               type="button"
               onClick={() => onRemoveItem(item.id)}
-              className="btn btn-ghost btn-sm text-error"
+              className="btn btn-ghost btn-xs text-error"
               aria-label={`Remove ${item.name}`}
             >
               <FiTrash2 />
@@ -111,12 +111,12 @@ const Cart = ({ cartItems, totalPrice, onRemoveItem, onCheckout }) => {
         ))}
       </div>
 
-      <div className="mt-6 flex items-center justify-between border-t border-base-300 pt-5">
-        <span className="text-sm uppercase tracking-[0.2em] text-base-content/50">Total</span>
-        <strong className="text-2xl font-black text-primary">${totalPrice}</strong>
+      <div className="mt-5 flex items-center justify-between border-t border-[#eee9fb] pt-4">
+        <span className="text-[11px] uppercase tracking-[0.2em] text-base-content/50">Total</span>
+        <strong className="text-lg font-black text-base-content">${totalPrice}</strong>
       </div>
 
-      <button type="button" onClick={onCheckout} className="btn btn-primary mt-6 w-full rounded-full">
+      <button type="button" onClick={onCheckout} className="btn btn-primary mt-5 min-h-9 w-full rounded-full text-[11px] uppercase tracking-[0.18em]">
         Proceed to Checkout
       </button>
     </div>
@@ -135,53 +135,51 @@ const MainSection = ({
   onCheckout,
 }) => {
   return (
-    <section className="mx-auto w-[min(1120px,calc(100%-1.5rem))] py-16 md:py-20" id="products">
-      <div className="rounded-[2rem] border border-base-300 bg-base-100/90 p-6 shadow-sm md:p-8">
-        <div className="mx-auto mb-10 max-w-2xl text-center">
-          <span className="badge badge-primary badge-outline rounded-full px-4 py-3 uppercase tracking-[0.2em]">
-            Curated Collection
-          </span>
-          <h2 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">Premium Digital Tools</h2>
-          <p className="mt-4 text-base leading-8 text-base-content/70">
-            Browse ready-to-use resources that help creators, freelancers, and
-            business teams move quickly.
-          </p>
-        </div>
-
-        <div className="mb-8 flex justify-center">
-          <div className="join rounded-full border border-base-300 bg-base-100 p-1 shadow-sm">
-            <button
-              type="button"
-              className={`btn join-item rounded-full ${activeTab === 'products' ? 'btn-primary' : 'btn-ghost'}`}
-              onClick={() => onSetActiveTab('products')}
-            >
-              <FiGrid />
-              Products
-            </button>
-            <button
-              type="button"
-              className={`btn join-item rounded-full ${activeTab === 'cart' ? 'btn-primary' : 'btn-ghost'}`}
-              onClick={() => onSetActiveTab('cart')}
-            >
-              <FiShoppingCart />
-              Cart
-              <span className={`badge badge-sm ${activeTab === 'cart' ? 'badge-neutral' : 'badge-primary'}`}>
-                {cartItems.length}
-              </span>
-            </button>
+    <section className="mx-auto w-[min(1120px,calc(100%-1.5rem))] py-12 md:py-16" id="products">
+      <div className="rounded-none border-2 border-sky-400 bg-white p-1">
+        <div className="border border-dashed border-sky-300 p-5 md:p-6">
+          <div className="mx-auto mb-7 max-w-2xl border border-dashed border-sky-300 p-4 text-center">
+            <h2 className="text-[1.9rem] font-bold tracking-tight text-base-content md:text-[2.2rem]">Premium Digital Tools</h2>
           </div>
+          <div className="mx-auto mb-6 flex justify-center">
+            <span className="badge badge-primary rounded-full px-4 py-3 text-[10px] uppercase tracking-[0.2em]">
+              Live Catalog
+            </span>
+          </div>
+          <div className="mb-6 flex justify-center">
+            <div className="join rounded-full border border-[#ebe6f8] bg-white p-1 shadow-sm">
+              <button
+                type="button"
+                className={`btn join-item min-h-8 rounded-full px-4 text-[11px] uppercase tracking-[0.16em] ${activeTab === 'products' ? 'btn-primary' : 'btn-ghost'}`}
+                onClick={() => onSetActiveTab('products')}
+              >
+                <FiGrid />
+                Products
+              </button>
+              <button
+                type="button"
+                className={`btn join-item min-h-8 rounded-full px-4 text-[11px] uppercase tracking-[0.16em] ${activeTab === 'cart' ? 'btn-primary' : 'btn-ghost'}`}
+                onClick={() => onSetActiveTab('cart')}
+              >
+                <FiShoppingCart />
+                Cart
+                <span className={`badge badge-sm ${activeTab === 'cart' ? 'badge-neutral' : 'badge-primary'}`}>
+                  {cartItems.length}
+                </span>
+              </button>
+            </div>
+          </div>
+          {activeTab === 'products' ? (
+            <Products products={products} addedState={addedState} onAddToCart={onAddToCart} />
+          ) : (
+            <Cart
+              cartItems={cartItems}
+              totalPrice={totalPrice}
+              onRemoveItem={onRemoveItem}
+              onCheckout={onCheckout}
+            />
+          )}
         </div>
-
-        {activeTab === 'products' ? (
-          <Products products={products} addedState={addedState} onAddToCart={onAddToCart} />
-        ) : (
-          <Cart
-            cartItems={cartItems}
-            totalPrice={totalPrice}
-            onRemoveItem={onRemoveItem}
-            onCheckout={onCheckout}
-          />
-        )}
       </div>
     </section>
   )

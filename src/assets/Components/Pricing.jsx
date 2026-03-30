@@ -1,14 +1,20 @@
 import { FiCheck } from 'react-icons/fi'
+import {
+  primaryButton,
+  sectionCopy,
+  sectionHeadingWrap,
+  sectionTitle,
+  sectionWidth,
+  surfaceCard,
+} from './uiStyles'
 
 const Pricing = ({ pricingPlans }) => {
   return (
     <section className="py-20 md:py-24" id="pricing">
-      <div className="mx-auto w-[min(1120px,calc(100%-1.5rem))]">
-        <div className="mx-auto max-w-[44rem] text-center">
-          <h2 className="text-[2.6rem] font-extrabold tracking-[-0.05em] text-[#1d2438] md:text-[4rem]">
-            Simple, Transparent Pricing
-          </h2>
-          <p className="mt-4 text-base text-[#8b95a9]">
+      <div className={sectionWidth}>
+        <div className={`${sectionHeadingWrap} max-w-[44rem]`}>
+          <h2 className={sectionTitle}>Simple, Transparent Pricing</h2>
+          <p className={sectionCopy}>
             Choose the plan that fits your needs. Upgrade or downgrade anytime.
           </p>
         </div>
@@ -17,10 +23,10 @@ const Pricing = ({ pricingPlans }) => {
           {pricingPlans.map((plan) => (
             <article
               key={plan.name}
-              className={`relative rounded-[1.25rem] border px-6 py-6 shadow-[0_10px_24px_rgba(28,30,53,0.04)] ${
+              className={`relative rounded-[1.25rem] px-6 py-6 ${
                 plan.featured
                   ? 'border-transparent bg-gradient-to-br from-[#6f3df4] via-[#7c23ff] to-[#bb16ff] text-white'
-                  : 'border-[#ece8f7] bg-[#f9faff] text-[#1d2438]'
+                  : `${surfaceCard} bg-[#f9faff] text-[#1d2438]`
               }`}
             >
               {plan.featured ? (
@@ -54,7 +60,7 @@ const Pricing = ({ pricingPlans }) => {
                 className={`mt-8 inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-semibold ${
                   plan.featured
                     ? 'bg-white text-[#6f3df4]'
-                    : 'bg-gradient-to-r from-[#6f3df4] to-[#9c16f7] text-white'
+                    : primaryButton
                 }`}
               >
                 {plan.cta}

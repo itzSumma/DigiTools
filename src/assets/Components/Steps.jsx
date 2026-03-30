@@ -1,14 +1,18 @@
+import {
+  sectionCopy,
+  sectionHeadingWrap,
+  sectionTitle,
+  sectionWidth,
+  surfaceCard,
+} from './uiStyles'
+
 const Steps = ({ steps }) => {
   return (
     <section className="bg-[#f7f8fc] py-20 md:py-24" id="steps">
-      <div className="mx-auto w-[min(1120px,calc(100%-1.5rem))]">
-        <div className="mx-auto max-w-[40rem] text-center">
-          <h2 className="text-[2.6rem] font-extrabold tracking-[-0.05em] text-[#1d2438] md:text-[4rem]">
-            Get Started In 3 Steps
-          </h2>
-          <p className="mt-4 text-base text-[#8b95a9]">
-            Start using premium digital tools in minutes, not hours.
-          </p>
+      <div className={sectionWidth}>
+        <div className={`${sectionHeadingWrap} max-w-[40rem]`}>
+          <h2 className={sectionTitle}>Get Started In 3 Steps</h2>
+          <p className={sectionCopy}>Start using premium digital tools in minutes, not hours.</p>
         </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">
@@ -16,7 +20,7 @@ const Steps = ({ steps }) => {
             return (
               <article
                 key={step.title}
-                className="relative rounded-[1.25rem] border border-[#ece8f7] bg-white px-6 py-10 text-center shadow-[0_10px_24px_rgba(28,30,53,0.04)]"
+                className={`${surfaceCard} relative px-6 py-10 text-center`}
               >
                 <span className="absolute right-4 top-4 inline-flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-[#6f3df4] to-[#9c16f7] text-xs font-semibold text-white">
                   0{index + 1}

@@ -2,6 +2,16 @@ import {
   FiCheck,
   FiShoppingCart,
 } from 'react-icons/fi'
+import {
+  pillToggleWrap,
+  primaryButton,
+  sectionCopy,
+  sectionHeadingWrap,
+  sectionTitle,
+  sectionWidth,
+  surfaceCard,
+  toggleButton,
+} from './uiStyles'
 
 const tagStyles = {
   'best-seller': 'bg-[#fff0cc] text-[#d48806]',
@@ -17,7 +27,7 @@ const formatPeriod = (period) => {
 
 const ProductCard = ({ product, onAddToCart }) => {
   return (
-    <article className="rounded-[1.15rem] border border-[#ece8f7] bg-white p-5 shadow-[0_12px_30px_rgba(28,30,53,0.05)]">
+    <article className={`${surfaceCard} p-5`}>
       <div className="flex items-start justify-between gap-4">
         <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#f0ebfb] bg-white shadow-sm">
           <img
@@ -53,7 +63,7 @@ const ProductCard = ({ product, onAddToCart }) => {
       <button
         type="button"
         onClick={() => onAddToCart(product)}
-        className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-[#6f3df4] to-[#9c16f7] px-5 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_rgba(122,56,245,0.18)]"
+        className={`${primaryButton} mt-6 w-full`}
       >
         Buy Now
       </button>
@@ -64,7 +74,7 @@ const ProductCard = ({ product, onAddToCart }) => {
 const CartSection = ({ cartItems, totalPrice, onRemoveItem, onCheckout }) => {
   if (cartItems.length === 0) {
     return (
-      <div className="rounded-[1.5rem] border border-[#ece8f7] bg-white px-6 py-14 text-center shadow-[0_12px_30px_rgba(28,30,53,0.04)]">
+      <div className={`${surfaceCard} rounded-[1.5rem] px-6 py-14 text-center`}>
         <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#f2ebff] text-[#7a38f5]">
           <FiShoppingCart className="text-xl" />
         </div>
@@ -75,7 +85,7 @@ const CartSection = ({ cartItems, totalPrice, onRemoveItem, onCheckout }) => {
   }
 
   return (
-    <div className="rounded-[1.5rem] border border-[#ece8f7] bg-white p-6 shadow-[0_12px_30px_rgba(28,30,53,0.04)] md:p-8">
+    <div className={`${surfaceCard} rounded-[1.5rem] p-6 md:p-8`}>
       <h3 className="text-[2rem] font-bold tracking-[-0.04em] text-[#1d2438]">Your Cart</h3>
 
       <div className="mt-6 space-y-4">
@@ -110,7 +120,7 @@ const CartSection = ({ cartItems, totalPrice, onRemoveItem, onCheckout }) => {
       <button
         type="button"
         onClick={onCheckout}
-        className="mt-4 inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-[#6f3df4] to-[#9c16f7] px-5 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_rgba(122,56,245,0.18)]"
+        className={`${primaryButton} mt-4 w-full`}
       >
         Proceed to Checkout
       </button>
@@ -129,38 +139,28 @@ const MainSection = ({
   onCheckout,
 }) => {
   return (
-    <section className="mx-auto w-[min(1120px,calc(100%-1.5rem))] py-20 md:py-24" id="products">
-      <div className="mx-auto max-w-[42rem] text-center">
-        <h2 className="text-[2.6rem] font-extrabold tracking-[-0.05em] text-[#1d2438] md:text-[4rem]">
-          Premium Digital Tools
-        </h2>
-        <p className="mx-auto mt-4 max-w-[38rem] text-base leading-7 text-[#8b95a9]">
+    <section className={`${sectionWidth} py-20 md:py-24`} id="products">
+      <div className={`${sectionHeadingWrap} max-w-[42rem]`}>
+        <h2 className={sectionTitle}>Premium Digital Tools</h2>
+        <p className={`${sectionCopy} mx-auto max-w-[38rem]`}>
           Choose from our curated collection of premium digital products designed
           to boost your productivity and creativity.
         </p>
       </div>
 
       <div className="mt-8 flex justify-center">
-        <div className="inline-flex rounded-full border border-[#ece8f7] bg-white p-1 shadow-sm">
+        <div className={pillToggleWrap}>
           <button
             type="button"
             onClick={() => onSetActiveTab('products')}
-            className={`rounded-full px-6 py-3 text-sm font-semibold transition ${
-              activeTab === 'products'
-                ? 'bg-gradient-to-r from-[#6f3df4] to-[#9c16f7] text-white shadow-[0_8px_24px_rgba(122,56,245,0.18)]'
-                : 'text-[#5f6781]'
-            }`}
+            className={toggleButton(activeTab === 'products')}
           >
             Products
           </button>
           <button
             type="button"
             onClick={() => onSetActiveTab('cart')}
-            className={`rounded-full px-6 py-3 text-sm font-semibold transition ${
-              activeTab === 'cart'
-                ? 'bg-gradient-to-r from-[#6f3df4] to-[#9c16f7] text-white shadow-[0_8px_24px_rgba(122,56,245,0.18)]'
-                : 'text-[#5f6781]'
-            }`}
+            className={toggleButton(activeTab === 'cart')}
           >
             Cart ({cartItems.length})
           </button>

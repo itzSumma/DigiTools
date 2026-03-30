@@ -34,6 +34,18 @@ const assetMap = {
   shoppingCartImage,
 }
 
+const mapCatalogData = (data) => ({
+  products: data.products.map((product) => ({
+    ...product,
+    iconSrc: assetMap[product.icon],
+  })),
+  steps: data.steps.map((step) => ({
+    ...step,
+    iconSrc: assetMap[step.icon],
+  })),
+  pricingPlans: data.pricingPlans,
+})
+
 function App() {
   const [catalog, setCatalog] = useState({
     products: [],
@@ -52,17 +64,7 @@ function App() {
 
       if (cancelled) return
 
-      setCatalog({
-        products: data.products.map((product) => ({
-          ...product,
-          iconSrc: assetMap[product.icon],
-        })),
-        steps: data.steps.map((step) => ({
-          ...step,
-          iconSrc: assetMap[step.icon],
-        })),
-        pricingPlans: data.pricingPlans,
-      })
+      setCatalog(mapCatalogData(data))
     }
 
     loadData()

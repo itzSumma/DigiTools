@@ -1,4 +1,5 @@
 import { FiPlay } from 'react-icons/fi'
+import groupFive from '../Group 5.png'
 
 const Banner = ({ heroAssets }) => {
   return (
@@ -7,7 +8,8 @@ const Banner = ({ heroAssets }) => {
       id="hero"
     >
       <div className="max-w-[34rem]">
-        <span className="inline-flex rounded-full bg-[#ede8ff] px-4 py-2 text-xs font-semibold text-[#7a38f5] shadow-sm">
+        <span className="inline-flex items-center gap-2 rounded-full bg-[#ede8ff] px-4 py-3 text-md font-semibold text-[#7a38f5] shadow-md">
+          <img src={groupFive} alt="" aria-hidden="true" className="h-4 w-4 object-contain" />
           New: AI-Powered Tools Available
         </span>
         <h1 className="mt-6 text-[2.6rem] font-extrabold leading-[0.95] tracking-[-0.05em] text-[#20263a] md:text-[4.5rem]">
